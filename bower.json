@@ -1,0 +1,24 @@
+{
+  "name": "mokkup",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/drmyersii/mokkup",
+  "description": "mokkup",
+  "keywords": [
+    "mokkup"
+  ],
+  "authors": [
+    "David Myers <drmyersii>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "flat-ui": "~2.2.2"
+  }
+}
