@@ -1,3 +1,63 @@
-.hello-world {
-    background-color: #fff;
+@light-background-color: #fff;
+@dark-background-color: #232323;
+
+.columns(@cols, @i: 1) when (@i =< @cols) {
+    .fractions(@fracs, @j: 1) when (@j =< @fracs) {
+        .cols-@{j}-@{i} {
+            width: ((@j / @i) * 100%);
+        }
+
+        .fractions(@fracs, (@j + 1));
+    }
+
+    .fractions(@i);
+
+    .columns(@cols, (@i + 1));
+}
+
+.columns(12);
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', Arial;
+    margin: 0;
+}
+
+#panel {
+    background-color: @dark-background-color;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 15rem;
+
+    &, & a {
+        color: #fff;
+    }
+
+    input {
+        color: #121212;
+    }
+
+    .fieldset {
+        padding: 1rem;
+    }
+}
+
+main {
+    background-color: @light-background-color;
+    height: 100%;
+    left: 0;
+    position:fixed;
+    top: 0;
+    width: ~"calc(100% - 15rem)";
 }
